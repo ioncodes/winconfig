@@ -1,3 +1,4 @@
+# https://github.com/dracula/powershell
 # Dracula readline configuration. Requires version 2.0, if you have 1.2 convert to `Set-PSReadlineOption -TokenType`
 Set-PSReadlineOption -Color @{
     "Command" = [ConsoleColor]::Green
