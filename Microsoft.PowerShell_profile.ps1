@@ -1,4 +1,5 @@
-# Dracula readline configuration. Requires version 2.0, if you have 1.2 convert to `Set-PSReadlineOption -TokenType`
+Set-PSReadLineKeyHandler -Chord "Ctrl+n" -Function ForwardWord
+Set-PSReadLineOption -PredictionSource History
 Set-PSReadlineOption -Color @{
     "Command" = [ConsoleColor]::Green
     "Parameter" = [ConsoleColor]::Gray
@@ -9,14 +10,14 @@ Set-PSReadlineOption -Color @{
     "Type" = [ConsoleColor]::Cyan
     "Comment" = [ConsoleColor]::DarkCyan
 }
-# Dracula Prompt Configuration
+
 Import-Module posh-git
-$GitPromptSettings.DefaultPromptPrefix.Text = "$([char]::ConvertFromUtf32(0x1F40D)) " # snake emoji
+$GitPromptSettings.DefaultPromptPrefix.Text = "Layle "
 $GitPromptSettings.DefaultPromptPrefix.ForegroundColor = [ConsoleColor]::Green
 $GitPromptSettings.DefaultPromptPath.ForegroundColor =[ConsoleColor]::Cyan
-$GitPromptSettings.DefaultPromptSuffix.Text = "$([char]0x203A) " # chevron unicode symbol
+$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+$GitPromptSettings.DefaultPromptSuffix.Text = " $([char]0x203A) "
 $GitPromptSettings.DefaultPromptSuffix.ForegroundColor = [ConsoleColor]::Magenta
-# Dracula Git Status Configuration
 $GitPromptSettings.BeforeStatus.ForegroundColor = [ConsoleColor]::Blue
 $GitPromptSettings.BranchColor.ForegroundColor = [ConsoleColor]::Blue
 $GitPromptSettings.AfterStatus.ForegroundColor = [ConsoleColor]::Blue
